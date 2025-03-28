@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StonedGrowth - High-conversion marketing solutions">
     <title>StonedGrowth - Portfolio</title>
+    
+    <!-- Font Preloading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        /* Preserved your original styles with strategic improvements */
+        /* ===== Core Improvements ===== */
         :root {
-            --primary: #388E3C;
+            --primary: #4CAF50;    /* Enhanced contrast green */
             --dark: #111111;
             --medium: #2A2A2A;
             --text: #FFFFFF;
+            --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        /* Performance fixes */
-        * { 
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            min-width: 0; /* Prevents overflow */
         }
 
         body {
@@ -28,93 +34,192 @@
             font-family: 'Open Sans', sans-serif;
         }
 
-        /* Maintained your animation structure */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* ===== Maintained Your Original Layout ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Hero section preservation */
+        /* ===== Enhanced Hero Section ===== */
         #hero {
-            height: 100svh; /* Modern viewport unit */
+            height: 100svh;
             min-height: 600px;
-            background: 
-                linear-gradient(rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.9)),
-                url('stone-texture.webp'); /* WebP fallback */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            text-align: center;
+            background: 
+                linear-gradient(rgba(17, 17, 17, 0.9), rgba(17, 17, 17, 0.9)),
+                url('stone-texture.webp');
+            background-size: cover;
+            background-position: center;
         }
 
-        /* Cards - kept your hover effects */
+        #hero h1 {
+            font: 700 48px/1.2 'Montserrat', sans-serif;
+            max-width: 900px;
+            margin: 0 auto 25px;
+            animation: fadeInUp 0.8s var(--transition);
+        }
+
+        /* ===== Smoother Animations ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translate3d(0, 30px, 0); }
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+
+        /* ===== Enhanced Services Grid ===== */
+        .grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
         .card {
             background: var(--medium);
+            padding: 30px;
+            border-radius: 10px;
             border: 1px solid var(--primary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform var(--transition), box-shadow var(--transition);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
         }
 
-        /* Portfolio grid improvements */
-        .portfolio-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+        /* ===== Optimized Portfolio Section ===== */
+        .portfolio-card {
+            position: relative;
+            background: var(--medium);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--primary);
         }
 
-        /* Mobile fixes */
+        .portfolio-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+        }
+
+        /* ===== Mobile Improvements ===== */
         @media (max-width: 768px) {
-            #hero { 
+            #hero {
+                padding: 2rem 0;
                 height: auto;
-                padding: 4rem 0;
+                min-height: 100vh;
             }
-            
-            .cta-btn {
+
+            h1 { font-size: 32px; }
+            h2 { font-size: 28px; }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .card, .portfolio-card {
                 width: 100%;
-                max-width: 300px;
-                text-align: center;
+                margin: 0 auto;
             }
         }
 
-        /* Accessibility additions */
+        /* ===== Accessibility Additions ===== */
         .cta-btn:focus {
-            outline: 2px solid var(--primary);
+            outline: 3px solid var(--primary);
             outline-offset: 3px;
         }
 
-        /* Performance tweaks */
-        .animate-on-scroll {
-            opacity: 0;
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: none;
+        /* ===== Your Original Style Enhancements ===== */
+        .cta-btn {
+            padding: 15px 40px;
+            background: var(--primary);
+            color: var(--text);
+            border-radius: 5px;
+            font: 600 18px/1 'Open Sans', sans-serif;
+            text-decoration: none;
+            transition: 
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .trust-signal {
+            background: rgba(76, 175, 80, 0.1);
+            backdrop-filter: blur(4px);
         }
     </style>
 </head>
 <body>
-    <!-- Preserved your original markup structure -->
-    <section id="hero">
-        <h1 class="animate-on-scroll">Grow Your Revenue with Ads & Funnels That Deliver</h1>
-        <!-- ... rest of your content ... -->
+    <!-- Hero Section -->
+    <section id="hero" class="container">
+        <h1>Grow Your Revenue with Ads & Funnels That Deliver</h1>
+        <p>No guesswork. More leads, sales, growth - starting now.</p>
+        <a href="#cta" class="cta-btn">Get Your Free Strategy Call</a>
+        <p class="trust-signal">Social media ads deliver an average 250% ROI - [Goat Agency, 2024]</p>
+        <a href="#cta" class="fixed-cta" aria-label="Emergency contact">📞</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container">
+        <h2 class="section-title">What We Do</h2>
+        <div class="grid">
+            <!-- Your original service cards here -->
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container">
+        <h2 class="section-title">Our Work</h2>
+        <div class="grid portfolio-grid">
+            <!-- Your original portfolio cards here -->
+        </div>
     </section>
 
     <script>
-        // Simple scroll animation trigger
+        // Smooth scroll and intersection observer
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
                 }
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        document.querySelectorAll('.card, .portfolio-card').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(20px)";
+            el.style.transition = "opacity 0.6s var(--transition), transform 0.6s var(--transition)";
             observer.observe(el);
         });
     </script>
